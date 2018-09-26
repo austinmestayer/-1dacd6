@@ -1,0 +1,116 @@
+/*Algorithm*\
+ * 				Program must be able to:
+ * 1. Take user input for day of week, not in any order 
+ * 2. Assign infinite sale values for that day of the week
+ * 3. Sort the days of week in standard order starting at Sunday
+ * 4. Find the mean of all of the data sets
+ * 5. Create a data table that lists all values in order and displays the mean below
+ */
+
+import java.util.Scanner;
+
+public class Prog03_PayCalcV2 {
+
+	public static void main(String[] args) {
+
+//Scanner Initiation
+		Scanner sc = new Scanner (System.in);
+//Begin Variable Declaration	
+		
+		String[] DayofWeek = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+		
+		String Day1 = "Sunday";
+		String Day2 = "Monday";
+		String Day3 = "Tuesday";
+		String Day4 = "Wednesday";
+		String Day5 = "Thursday";
+		String Day6 = "Friday";
+		String Day7 = "Saturday";
+		
+		String Input1;
+		String Input2;
+		String Input3;
+		String Input4;
+		String Input5;
+		String Input6;
+		String Input7;
+		
+		Float Input1Value;
+		Float Input2Value;
+		Float Input3Value;
+		Float Input4Value;
+		Float Input5Value;
+		Float Input6Value;
+		Float Input7Value;
+		
+		String loop = "n";
+		
+		
+		
+//End Variable Declaration		
+		
+//Day 1 Sale Declaration
+		
+			{
+			
+			System.out.println("Enter Day of Sale (Sunday, Monday, Tuesday, etc.:");  
+			
+			Input1 = sc.nextLine();
+			
+			while (loop.equals("n")){
+				
+				System.out.println("Enter Sale Amount for " + Input1 + ":");
+				Input1Value = sc.nextFloat();
+				
+				System.out.println("Are you finished entering sales for " + Input1 + "?" + "(Y/N)");
+				sc.nextLine();
+				
+				String loop1;
+				
+				loop1 = sc.nextLine();
+				
+				if (loop1.equalsIgnoreCase("n")) { //Restart Statement
+					continue;
+				}
+				if (loop1.equalsIgnoreCase("y")) { // End Statement
+					break;
+				}
+			
+			}
+/*
+ * End Day 1 Sale Declaration
+ * 		
+ * Begin Day 2 Sale Declaration
+	*/		
+			{
+				
+				System.out.println("Enter Next Day of Sale (Sunday, Monday, Tuesday, etc.:");  
+				
+				Input2 = sc.nextLine();
+				
+				while (loop.equals("n")){
+					
+					System.out.println("Enter Sale Amount for " + Input2 + ":"); 
+					Input2Value = sc.nextFloat();
+					
+					System.out.println("Are you finished entering sales for " + Input2 + "?" + "(Y/N)");
+					
+					String loop2;
+					
+					sc.nextLine();
+					loop2 = sc.nextLine();
+					
+					if (loop2.equalsIgnoreCase("n")) { //Restart Statement
+						continue;
+					}
+					if (loop2.equalsIgnoreCase("y")) { // End Statement
+						break;
+					}
+				
+				}
+			}
+		}
+	}
+}
+
+

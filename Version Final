@@ -1,0 +1,812 @@
+import java.util.Scanner;
+
+public class Prog03_PayCalc {
+
+	public static void main(String[] args) {
+
+//Scanner Initiation
+		Scanner sc = new Scanner (System.in);
+//Begin Variable Declaration	
+		
+//universal declarations
+		String Day1 = "Sunday";
+		String Day2 = "Monday";
+		String Day3 = "Tuesday";
+		String Day4 = "Wednesday";
+		String Day5 = "Thursday";
+		String Day6 = "Friday";
+		String Day7 = "Saturday";
+		
+		String Input1 = null;
+		String Input2 = null;
+		String Input3 = null;
+		String Input4 = null;
+		String Input5 = null;
+		String Input6 = null;
+		String Input7 = null;
+		
+		String Input1Final = null;
+		String Input2Final = null;
+		String Input3Final = null;
+		String Input4Final = null;
+		String Input5Final = null;
+		String Input6Final = null;
+		String Input7Final = null;
+		
+		double Input1Value = 0;
+		double Input2Value = 0;
+		double Input3Value = 0;
+		double Input4Value = 0;
+		double Input5Value = 0;
+		double Input6Value = 0;
+		double Input7Value = 0;
+		
+		double Input1ValueInit = 0;
+		double Input2ValueInit = 0;
+		double Input3ValueInit = 0;
+		double Input4ValueInit = 0;
+		double Input5ValueInit = 0;
+		double Input6ValueInit = 0;
+		double Input7ValueInit = 0;
+		
+		double InputSaleTotal;
+		double InputSaleAverage;
+		double CommissionValue;
+		
+		String Day1Value = "f";
+		String Day2Value = "f";
+		String Day3Value = "f";
+		String Day4Value = "f";
+		String Day5Value = "f";
+		String Day6Value = "f";
+		String Day7Value = "f";
+		
+		boolean isValid1 = false;
+		
+		int SaleAmountTotal = 0;
+		
+		String loop = "n";
+		
+		
+		String loop1 = null;
+		String loop1also = null;
+		String loop1again = "0";
+		
+		String loop2 = null;
+		String loop2also = null;
+		String loop2again = "0";
+		
+		String loop3 = null;
+		String loop3also = null;
+		String loop3again = "0";
+		
+		String loop4 = null;
+		String loop4also = null;
+		String loop4again = "0";
+		
+		String loop5 = null;
+		String loop5also = null;
+		String loop5again = "0";
+		
+		String loop6 = null;
+		String loop6also = null;
+		String loop6again = "0";
+		
+		String loop7 = null;
+		String loop7also = null;
+		String loop7again = "0";
+		
+		
+		
+		
+		
+//End Variable Declaration		
+		
+//Day 1 Sale Declaration
+		
+			{
+			
+			System.out.println("Enter Day of Sale (Sunday, Monday, Tuesday, etc.:");  
+			
+		
+			{
+			while (Day1Value.equals("f")){
+				
+				Input1 = sc.nextLine();
+				
+				switch (Input1) {
+				case "sunday": case "Sunday": Input1Final = "Sunday"; Day1Value = "t"; 
+				break;
+				case "monday": case "Monday": Input2Final = "Monday"; Day1Value = "t";
+				break;
+				case "tuesday": case "Tuesday": Input3Final = "Tuesday"; Day1Value = "t";
+				break;
+				case "wednesday": case "Wednesday": Input4Final = "Wednesday"; Day1Value = "t";
+				break;
+				case "thursday": case "Thursday": Input5Final = "Thursday"; Day1Value = "t";
+				break;
+				case "friday": case "Friday": Input6Final = "Friday"; Day1Value = "t";
+				break;
+				case "saturday": case "Saturday": Input7Final = "Saturday"; Day1Value = "t";
+				break;
+				default: Day1Value = "f";
+				}
+				if (Day1Value.equals("f")) {
+					System.out.println("Please enter a correct day:");
+					continue;
+				}
+				if (Day1Value.equals("t")) {
+					break;
+				}
+			}
+		}
+			while (loop.equals("n")){
+				
+				System.out.println("Enter Sale Amount for " + Input1+ ":");
+				
+				
+					do {
+						if (sc.hasNextDouble()) {
+							Input1Value = sc.nextDouble();
+							isValid1 = true;
+						}
+						else {
+							System.out.println("Please Enter a valid numeric value:");
+							sc.next();
+						}
+						
+					}
+					while(isValid1 == false);
+					
+				isValid1 = false;
+				
+				Input1ValueInit = Input1Value + Input1ValueInit;
+				
+				SaleAmountTotal++;
+				
+				System.out.println("Are you finished entering sales for " + Input1 + "?" + "(Y/N)");
+				sc.nextLine();
+				
+				{
+				
+				
+				while(loop1again.equals("0")) {
+				loop1 = sc.nextLine();
+				
+				if (loop1.equalsIgnoreCase("n")) { //Restart Statement
+					loop1also = "n";
+					break;
+				}
+				else if (loop1.equalsIgnoreCase("y")) { // End Statement
+					loop1also = "y";
+					break;
+				}
+				else {
+					System.out.println("Please enter a valid response:");
+					continue;
+				}
+				}
+				}
+				if (loop1also.equalsIgnoreCase("n"))
+					continue;
+				if (loop1also.equalsIgnoreCase("y"))
+					break;
+			}
+			
+					
+			
+			
+
+/*
+ * End Day 1 Sale Declaration
+ * 		
+ * Begin Day 2 Sale Declaration
+	*/		
+			{
+				
+				System.out.println("Enter Day of Sale (Sunday, Monday, Tuesday, etc.:");  
+				
+			
+				{
+				while (Day2Value.equals("f")){
+					
+					Input2 = sc.nextLine();
+					
+					switch (Input2) {
+					case "sunday": case "Sunday": Input1Final = "Sunday"; Day2Value = "t";
+					break;
+					case "monday": case "Monday": Input2Final = "Monday"; Day2Value = "t";
+					break;
+					case "tuesday": case "Tuesday": Input3Final = "Tuesday"; Day2Value = "t";
+					break;
+					case "wednesday": case "Wednesday": Input4Final = "Wednesday"; Day2Value = "t";
+					break;
+					case "thursday": case "Thursday": Input5Final = "Thursday"; Day2Value = "t";
+					break;
+					case "friday": case "Friday": Input6Final = "Friday"; Day2Value = "t";
+					break;
+					case "saturday": case "Saturday": Input7Final = "Saturday"; Day2Value = "t";
+					break;
+					default: Day2Value = "f";
+					}
+					if (Day2Value.equals("f")) {
+						System.out.println("Please enter a correct day:");
+						continue;
+					}
+					if (Day2Value.equals("t")) {
+						break;
+					}
+				}
+			}
+				while (loop.equals("n")){
+					
+					System.out.println("Enter Sale Amount for " + Input2+ ":");
+					
+					do {
+						if (sc.hasNextDouble()) {
+							Input2Value = sc.nextDouble();
+							isValid1 = true;
+						}
+						else {
+							System.out.println("Please Enter a valid numeric value:");
+							sc.next();
+						}
+						
+					}
+					while(isValid1 == false);
+					
+				isValid1 = false;
+					
+					Input2ValueInit = Input2Value + Input2ValueInit;
+					
+					SaleAmountTotal++;
+					
+					System.out.println("Are you finished entering sales for " + Input2+ "?" + "(Y/N)");
+					sc.nextLine();
+					
+					{
+						
+						
+						while(loop2again.equals("0")) {
+						loop2 = sc.nextLine();
+						
+						if (loop2.equalsIgnoreCase("n")) { //Restart Statement
+							loop2also = "n";
+							break;
+						}
+						else if (loop2.equalsIgnoreCase("y")) { // End Statement
+							loop2also = "y";
+							break;
+						}
+						else {
+							System.out.println("Please enter a valid response:");
+							continue;
+						}
+						}
+						}
+						if (loop2also.equalsIgnoreCase("n"))
+							continue;
+						if (loop2also.equalsIgnoreCase("y"))
+							break;
+					}
+/*
+ * End Day 2 Sale Declaration
+ * 		
+ * Begin Day 3 Sale Declaration
+	*/					
+				{
+					
+					System.out.println("Enter Day of Sale (Sunday, Monday, Tuesday, etc.:");  
+					
+				
+					{
+					while (Day3Value.equals("f")){
+						
+						Input3 = sc.nextLine();
+						
+						switch (Input3) {
+						case "sunday":   case "Sunday": Input1Final = "Sunday"; Day3Value = "t";
+						break;
+						case "monday":   case "Monday": Input2Final = "Monday"; Day3Value = "t";
+						break;
+						case "tuesday": case "Tuesday": Input3Final = "Tuesday"; Day3Value = "t";
+						break;
+						case "wednesday": case "Wednesday": Input4Final = "Wednesday"; Day3Value = "t";
+						break;
+						case "thursday": case "Thursday": Input5Final = "Thursday"; Day3Value = "t";
+						break;
+						case "friday": case "Friday": Input6Final = "Friday"; Day3Value = "t";
+						break;
+						case "saturday": case "Saturday": Input7Final = "Saturday"; Day3Value = "t";
+						break;
+						default: Day3Value = "f";
+						}
+						if (Day3Value.equals("f")) {
+							System.out.println("Please enter a correct day:");
+							continue;
+						}
+						if (Day3Value.equals("t")) {
+							break;
+						}
+					}
+				}
+					while (loop.equals("n")){
+						
+						System.out.println("Enter Sale Amount for " + Input3 + ":");
+						
+						do {
+							if (sc.hasNextDouble()) {
+								Input3Value = sc.nextDouble();
+								isValid1 = true;
+							}
+							else {
+								System.out.println("Please Enter a valid numeric value:");
+								sc.next();
+							}
+							
+						}
+						while(isValid1 == false);
+						
+					isValid1 = false;
+						
+						Input3ValueInit = Input3Value + Input3ValueInit;
+						
+						SaleAmountTotal++;
+						
+						System.out.println("Are you finished entering sales for " + Input3 + "?" + "(Y/N)");
+						sc.nextLine();
+						{
+							
+							
+							while(loop3again.equals("0")) {
+							loop3 = sc.nextLine();
+							{
+							if (loop3.equalsIgnoreCase("n")) { //Restart Statement
+								loop3also = "n";
+								break;
+							}
+							else if (loop3.equalsIgnoreCase("y")) { // End Statement
+								loop3also = "y";
+								break;
+							}
+							else {
+								System.out.println("Please enter a valid response:");
+								continue;
+							}
+							}
+							}
+							if (loop3also.equalsIgnoreCase("n"))
+								continue;
+							if (loop3also.equalsIgnoreCase("y"))
+								break;
+						}
+						}
+/*
+* End Day 3 Sale Declaration
+* 		
+* Begin Day 4 Sale Declaration
+*/					
+
+					{
+						
+						System.out.println("Enter Day of Sale (Sunday, Monday, Tuesday, etc.:");  
+						
+					
+						{
+						while (Day4Value.equals("f")){
+							
+							Input4 = sc.nextLine();
+							
+							switch (Input4) {
+							case "sunday": case "Sunday": Input1Final = "Sunday"; Day4Value = "t";
+							break;
+							case "monday": case "Monday": Input2Final = "Monday"; Day4Value = "t";
+							break;
+							case "tuesday": case "Tuesday": Input3Final = "Tuesday"; Day4Value = "t";
+							break;
+							case "wednesday": case "Wednesday": Input4Final = "Wednesday"; Day4Value = "t";
+							break;
+							case "thursday": case "Thursday": Input5Final = "Thursday"; Day4Value = "t";
+							break;
+							case "friday": case "Friday": Input6Final = "Friday"; Day4Value = "t";
+							break;
+							case "saturday": case "Saturday": Input7Final = "Saturday"; Day4Value = "t";
+							break;
+							default: Day4Value = "f";
+							}
+							if (Day4Value.equals("f")) {
+								System.out.println("Please enter a correct day:");
+								continue;
+							}
+							if (Day4Value.equals("t")) {
+								break;
+							}
+						}
+					}
+						while (loop.equals("n")){
+							
+							System.out.println("Enter Sale Amount for " + Input4 + ":");
+
+							do {
+								if (sc.hasNextDouble()) {
+									Input4Value = sc.nextDouble();
+									isValid1 = true;
+								}
+								else {
+									System.out.println("Please Enter a valid numeric value:");
+									sc.next();
+								}
+								
+							}
+							while(isValid1 == false);
+							
+						isValid1 = false;
+							
+							Input4ValueInit = Input4Value + Input4ValueInit;
+							
+							SaleAmountTotal++;
+							
+							System.out.println("Are you finished entering sales for " + Input4 + "?" + "(Y/N)");
+							sc.nextLine();	
+							{
+								
+								
+								while(loop4again.equals("0")) {
+									loop4 = sc.nextLine();
+								
+								if (loop4.equalsIgnoreCase("n")) { //Restart Statement
+									loop4also = "n";
+									break;
+								}
+								else if (loop4.equalsIgnoreCase("y")) { // End Statement
+									loop4also = "y";
+									break;
+								}
+								else {
+									System.out.println("Please enter a valid response:");
+									continue;
+								}
+								}
+								}
+								if (loop4also.equalsIgnoreCase("n"))
+									continue;
+								if (loop4also.equalsIgnoreCase("y"))
+									break;
+							}
+/*
+* End Day 4 Sale Declaration
+* 		
+* Begin Day 5 Sale Declaration
+*/				
+						{
+							
+							System.out.println("Enter Day of Sale (Sunday, Monday, Tuesday, etc.:");  
+							
+						
+							{
+							while (Day5Value.equals("f")){
+								
+								Input5 = sc.nextLine();
+								
+								switch (Input5) {
+								case "sunday": case "Sunday": Input1Final = "Sunday"; Day5Value = "t";
+								break;
+								case "monday": case "Monday": Input2Final = "Monday"; Day5Value = "t";
+								break;
+								case "tuesday": case "Tuesday": Input3Final = "Tuesday"; Day5Value = "t";
+								break;
+								case "wednesday": case "Wednesday": Input4Final = "Wednesday"; Day5Value = "t";
+								break;
+								case "thursday": case "Thursday": Input5Final = "Thursday"; Day5Value = "t";
+								break;
+								case "friday": case "Friday": Input6Final = "Friday"; Day5Value = "t";
+								break;
+								case "saturday": case "Saturday": Input7Final = "Saturday"; Day5Value = "t";
+								break;
+								default: Day5Value = "f";
+								}
+								if (Day5Value.equals("f")) {
+									System.out.println("Please enter a correct day:");
+									continue;
+								}
+								if (Day5Value.equals("t")) {
+									break;
+								}
+							}
+						}
+							while (loop.equals("n")){
+								
+								System.out.println("Enter Sale Amount for " + Input5 + ":");
+
+								do {
+									if (sc.hasNextDouble()) {
+										Input5Value = sc.nextDouble();
+										isValid1 = true;
+									}
+									else {
+										System.out.println("Please Enter a valid numeric value:");
+										sc.next();
+									}
+									
+								}
+								while(isValid1 == false);
+								
+							isValid1 = false;
+								
+								Input5ValueInit = Input5Value + Input5ValueInit;
+								
+								SaleAmountTotal++;
+								
+								System.out.println("Are you finished entering sales for " + Input5 + "?" + "(Y/N)");
+								sc.nextLine();
+								{
+									
+									
+									while(loop5again.equals("0")) {
+										loop5 = sc.nextLine();
+									
+									if (loop5.equalsIgnoreCase("n")) { //Restart Statement
+										loop5also = "n";
+										break;
+									}
+									else if (loop5.equalsIgnoreCase("y")) { // End Statement
+										loop5also = "y";
+										break;
+									}
+									else {
+										System.out.println("Please enter a valid response:");
+										continue;
+									}
+									}
+									}
+									if (loop5also.equalsIgnoreCase("n"))
+										continue;
+									if (loop5also.equalsIgnoreCase("y"))
+										break;
+								}
+/*
+* End Day 5 Sale Declaration
+* 		
+* Begin Day 6 Sale Declaration
+*/				
+							{
+								
+								System.out.println("Enter Day of Sale (Sunday, Monday, Tuesday, etc.:");  
+								
+							
+								{
+								while (Day6Value.equals("f")){
+									
+									Input6 = sc.nextLine();
+									
+									switch (Input6) {
+									case "sunday": case "Sunday": Input1Final = "Sunday"; Day6Value = "t";
+									break;
+									case "monday": case "Monday": Input2Final = "Monday"; Day6Value = "t";
+									break;
+									case "tuesday": case "Tuesday": Input3Final = "Tuesday"; Day6Value = "t";
+									break;
+									case "wednesday": case "Wednesday": Input4Final = "Wednesday"; Day6Value = "t";
+									break;
+									case "thursday": case "Thursday": Input5Final = "Thursday"; Day6Value = "t";
+									break;
+									case "friday": case "Friday": Input6Final = "Friday"; Day6Value = "t";
+									break;
+									case "saturday": case "Saturday": Input7Final = "Saturday"; Day6Value = "t";
+									break;
+									default: Day6Value = "f";
+									}
+									if (Day6Value.equals("f")) {
+										System.out.println("Please enter a correct day:");
+										continue;
+									}
+									if (Day6Value.equals("t")) {
+										break;
+									}
+								}
+							}
+								while (loop.equals("n")){
+									
+									System.out.println("Enter Sale Amount for " + Input6 +  ":");
+
+									do {
+										if (sc.hasNextDouble()) {
+											Input6Value = sc.nextDouble();
+											isValid1 = true;
+										}
+										else {
+											System.out.println("Please Enter a valid numeric value:");
+											sc.next();
+										}
+										
+									}
+									while(isValid1 == false);
+									
+								isValid1 = false;
+									
+									Input6ValueInit = Input6Value + Input6ValueInit;
+									
+									SaleAmountTotal++;
+									
+									System.out.println("Are you finished entering sales for " + Input6+ "?" + "(Y/N)");
+									sc.nextLine();
+									{
+										
+										
+										while(loop6again.equals("0")) {
+											loop6 = sc.nextLine();
+										
+										if (loop6.equalsIgnoreCase("n")) { //Restart Statement
+											loop6also = "n";
+											break;
+										}
+										else if (loop6.equalsIgnoreCase("y")) { // End Statement
+											loop6also = "y";
+											break;
+										}
+										else {
+											System.out.println("Please enter a valid response:");
+											continue;
+										}
+										}
+										}
+										if (loop6also.equalsIgnoreCase("n"))
+											continue;
+										if (loop6also.equalsIgnoreCase("y"))
+											break;
+									}
+/*
+* End Day 6 Sale Declaration
+* 		
+* Begin Day 7 Sale Declaration
+*/	
+								{
+									
+									System.out.println("Enter Day of Sale (Sunday, Monday, Tuesday, etc.:");  
+									
+								
+									{
+									while (Day7Value.equals("f")){
+										
+										Input7 = sc.nextLine();
+										
+										switch (Input7) {
+										case "sunday": case "Sunday": Input1Final = "Sunday"; Day7Value = "t";
+										break;
+										case "monday": case "Monday": Input2Final = "Monday"; Day7Value = "t";
+										break;
+										case "tuesday": case "Tuesday": Input3Final = "Tuesday"; Day7Value = "t";
+										break;
+										case "wednesday": case "Wednesday": Input4Final = "Wednesday"; Day7Value = "t";
+										break;
+										case "thursday": case "Thursday": Input5Final = "Thursday"; Day7Value = "t";
+										break;
+										case "friday": case "Friday": Input6Final = "Friday"; Day7Value = "t";
+										break;
+										case "saturday": case "Saturday": Input7Final = "Saturday"; Day7Value = "t";
+										break;
+										default: Day7Value = "f";
+										}
+										if (Day7Value.equals("f")) {
+											System.out.println("Please enter a correct day:");
+											continue;
+										}
+										if (Day7Value.equals("t")) {
+											break;
+										}
+									}
+								}
+									while (loop.equals("n")){
+										
+										System.out.println("Enter Sale Amount for " + Input7 + ":");
+
+										do {
+											if (sc.hasNextDouble()) {
+												Input7Value = sc.nextDouble();
+												isValid1 = true;
+											}
+											else {
+												System.out.println("Please Enter a valid numeric value:");
+												sc.next();
+											}
+											
+										}
+										while(isValid1 == false);
+										
+									isValid1 = false;
+									
+										Input7ValueInit = Input7Value + Input7ValueInit;
+										
+										SaleAmountTotal++;
+										
+										System.out.println("Are you finished entering sales for " + Input7 + "?" + "(Y/N)");
+										sc.nextLine();
+										{
+											
+											
+											while(loop7again.equals("0")) {
+												loop7 = sc.nextLine();
+											
+											if (loop7.equalsIgnoreCase("n")) { //Restart Statement
+												loop7also = "n";
+												break;
+											}
+											else if (loop7.equalsIgnoreCase("y")) { // End Statement
+												loop7also = "y";
+												break;
+											}
+											else {
+												System.out.println("Please enter a valid response:");
+												continue;
+											}
+											}
+											}
+											if (loop7also.equalsIgnoreCase("n"))
+												continue;
+											if (loop7also.equalsIgnoreCase("y"))
+												break;
+										}
+									
+									
+									InputSaleTotal = (Input1ValueInit + Input2ValueInit + Input3ValueInit + Input4ValueInit 
+													 + Input5ValueInit + Input6ValueInit + Input7ValueInit);
+									
+									InputSaleAverage = (Input1ValueInit + Input2ValueInit + Input3ValueInit + Input4ValueInit 
+											           + Input5ValueInit + Input6ValueInit + Input7ValueInit) / SaleAmountTotal;
+									
+									CommissionValue =  (200 + (InputSaleTotal / 100) * 9);
+									
+									if (InputSaleTotal > 15000) {
+										CommissionValue = (CommissionValue + 1000);
+									}
+								
+									System.out.println();
+									System.out.println();
+									System.out.println();
+									System.out.println();
+									
+									System.out.println("  Day             Sales");
+									
+									System.out.print(Input1Final + "       $ ");
+									System.out.printf("%,10.2f\n", Input1ValueInit);
+									System.out.print(Input2Final + "       $ ");
+									System.out.printf("%,10.2f\n", Input2ValueInit);
+									System.out.print(Input3Final + "      $ ");
+									System.out.printf("%,10.2f\n", Input3ValueInit);
+									System.out.print(Input4Final + "    $ ");
+									System.out.printf("%,10.2f\n", Input4ValueInit);
+									System.out.print(Input5Final + "     $ ");
+									System.out.printf("%,10.2f\n", Input5ValueInit);
+									System.out.print(Input6Final + "       $ ");
+									System.out.printf("%,10.2f\n", Input6ValueInit);
+									System.out.print(Input7Final + "     $ ");
+									System.out.printf("%,10.2f\n", Input7ValueInit);
+									System.out.println("             ____________");
+									System.out.print("Total Sales: $");
+									System.out.printf("%,11.2f", InputSaleTotal);
+									
+									System.out.println();
+									System.out.println();;
+									
+									System.out.print("Average sale value: $");
+									System.out.printf("%,11.2f", InputSaleAverage);
+									
+									System.out.println();
+									System.out.println();;
+									
+									System.out.print("Commission on Sales: $");
+									System.out.printf("%,11.2f", CommissionValue);
+									
+									if (InputSaleTotal > 60000) {
+										System.out.print(" ***");
+									}
+									
+									}
+								}
+							}
+						}	
+					}		
+				}
+			}
+		}
+}

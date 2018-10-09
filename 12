@@ -1,0 +1,74 @@
+import java.util.Scanner;
+
+public class Prog04_MakeTable {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner (System.in);
+		
+	
+		
+		
+		System.out.println("Enter The Table Operator (+, - , *, /, %. or R):");
+		
+		String localOperator;
+		int tableMinima = 0;
+		int tableMaxima = 0;
+		
+		localOperator = sc.nextLine();
+		
+		if (localOperator.equalsIgnoreCase("+")) {
+			
+			System.out.println("Enter The Smallest Operand For the Table:");
+			
+			boolean validatorMinima = false;
+			
+			do {
+					if(sc.hasNextInt()) {
+					tableMinima = sc.nextInt();
+					validatorMinima = true;
+					}
+					
+					else {
+						System.out.println("Please enter a valid integer:");
+						sc.next();
+					}
+			}
+					
+			while (validatorMinima == false);
+			
+			System.out.println("Enter The Largest Operand For the Table:");
+		
+			boolean validatorMaxima = false;
+			
+			do {
+					if(sc.hasNextInt()) {
+					tableMaxima = sc.nextInt();
+					validatorMaxima = true;
+					}
+					
+					else {
+						System.out.println("Please enter a valid integer:");
+						sc.next();
+					}
+			}
+			
+			while (validatorMaxima == false);
+			
+			{
+				
+			System.out.print(localOperator + "  " );
+			while (tableMinima <=+ tableMaxima) {
+				System.out.print(tableMinima + "  ");
+				tableMinima++;
+			
+			
+				}
+			
+			}
+			
+		}
+		
+	}
+
+}

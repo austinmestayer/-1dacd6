@@ -1,0 +1,427 @@
+/**
+ * Program to generate tables based upon operator input
+ *
+ * CSC 1350 Programming project No 3
+ * Section 7
+ *
+ * @author amesta2
+ * @since 10/1/2018
+ *
+ */
+
+
+import java.util.Scanner;
+
+public class Prog04_MakeTable {
+	
+		   public static void main (String[] args) {
+
+		     Scanner sc = new Scanner (System.in);
+		     
+		     String tableOperator;
+		     
+			 System.out.println("Enter The Table Operator (+, -, *, /, %, or R):");
+		     
+	
+		     int min = 0;
+		     int max = 0;
+		     boolean programBreak = false;
+		     
+		
+do {
+     
+     tableOperator = sc.nextLine();
+
+//Addition Function
+if (tableOperator.equalsIgnoreCase("+")) {		     
+		     System.out.println("Enter The Smallest Operand For the Table:");
+		     
+		  boolean validatorEscapeAddition = false;
+			do {
+		    	 
+		     
+		     boolean validatorMinima = false;
+		     
+		     do {
+					if (sc.hasNextInt()) { min = sc.nextInt(); validatorMinima = true;
+					}
+					else {
+						System.out.println("Please Enter a valid numeric value:"); sc.next();
+					}
+					
+				}
+				while(validatorMinima == false);
+			
+		     System.out.println("Enter The Largest Operand For the Table:");
+		     boolean validatorMaxima = false;
+		     
+		     do {
+					if (sc.hasNextInt()) { max = sc.nextInt(); validatorMaxima = true;
+					}
+					else {
+						System.out.println("Please Enter a valid numeric value:"); sc.next();
+					}
+					
+				}
+				while(validatorMaxima == false);
+		  
+		     if (min < max) { validatorEscapeAddition = true; }
+		     else { System.out.println("Please enter your range of values from smallest to largest."); System.out.println("Enter The Smallest Operand For the Table:"); }
+		     }
+		     while (validatorEscapeAddition == false);
+		   
+		      System.out.print("   +");
+		  for (int y = min; y <= max; y++) {
+			  System.out.printf("%10d", y);
+					  
+		  }
+		  
+		  System.out.println();
+		  System.out.println();
+		  		   
+		  for (int y = min; y <= max; y++) {
+		      
+			  
+			   System.out.printf("%4d", y);
+			  
+		         for (int x = min; x <= max; x++) {
+		        	 System.out.printf("%10d", y+x);
+		     
+		         }
+		         System.out.println();
+		  
+		      }
+		  programBreak = true;
+}
+
+//Subtraction Function
+else if (tableOperator.equalsIgnoreCase("-")) {		     
+		     System.out.println("Enter The Smallest Operand For the Table:");
+		     
+		  boolean validatorEscapeSubtraction = false;
+			do {
+		    	 
+		     
+		     boolean validatorMinima = false;
+		     
+		     do {
+					if (sc.hasNextInt()) { min = sc.nextInt(); validatorMinima = true;
+					}
+					else {
+						System.out.println("Please Enter a valid numeric value:"); sc.next();
+					}
+					
+				}
+				while(validatorMinima == false);
+			
+		     System.out.println("Enter The Largest Operand For the Table:");
+		     boolean validatorMaxima = false;
+		     
+		     do {
+					if (sc.hasNextInt()) { max = sc.nextInt(); validatorMaxima = true;
+					}
+					else {
+						System.out.println("Please Enter a valid numeric value:"); sc.next();
+					}
+					
+				}
+				while(validatorMaxima == false);
+		  
+		     if (min < max) { validatorEscapeSubtraction = true; }
+		     else { System.out.println("Please enter your range of values from smallest to largest."); System.out.println("Enter The Smallest Operand For the Table:"); }
+		     }
+		     while (validatorEscapeSubtraction == false);
+		   
+		      System.out.print("   -");
+		  for (int y = min; y <= max; y++) {
+			  System.out.printf("%10d", y);
+					  
+		  }
+		  
+		  System.out.println();
+		  System.out.println();
+		  		   
+		  for (int y = min; y <= max; y++) {
+		      
+			  
+			   System.out.printf("%4d", y);
+			  
+		         for (int x = min; x <= max; x++) {
+		        	 System.out.printf("%10d", y-x);
+		     
+		         }
+		         System.out.println();
+		  
+		      }
+		  programBreak = true;
+}
+		     
+ //Multiplication Function
+else if (tableOperator.equalsIgnoreCase("*")) {   
+		    System.out.println("Enter The Smallest Operand For the Table:");
+		     
+		  boolean validatorEscapeMultiply = false;
+			do {
+		    	 
+		     
+		     boolean validatorMinima = false;
+		     
+		     do {
+					if (sc.hasNextInt()) { min = sc.nextInt(); validatorMinima = true;
+					}
+					else {
+						System.out.println("Please Enter a valid numeric value:"); sc.next();
+					}
+					
+				}
+				while(validatorMinima == false);
+			
+		     System.out.println("Enter The Largest Operand For the Table:");
+		     boolean validatorMaxima = false;
+		     
+		     do {
+					if (sc.hasNextInt()) { max = sc.nextInt(); validatorMaxima = true;
+					}
+					else {
+						System.out.println("Please Enter a valid numeric value:"); sc.next();
+					}
+					
+				}
+				while(validatorMaxima == false);
+		  
+		     if (min < max) { validatorEscapeMultiply = true; }
+		     else { System.out.println("Please enter your range of values from smallest to largest."); System.out.println("Enter The Smallest Operand For the Table:"); }
+		     }
+		     while (validatorEscapeMultiply == false);
+		   
+		      System.out.print("   *");
+		  for (int y = min; y <= max; y++) {
+			  System.out.printf("%10d", y);
+					  
+		  }
+		  
+		  System.out.println();
+		  System.out.println();
+		  		   
+		  for (int y = min; y <= max; y++) {
+		      
+			  
+			   System.out.printf("%4d", y);
+			  
+		         for (int x = min; x <= max; x++) {
+		        	 System.out.printf("%10d", y*x);
+		        	 
+		         }
+		         System.out.println();
+		  
+		      }
+		  programBreak = true;
+		
+		}
+
+//Division Function
+else if (tableOperator.equalsIgnoreCase("/")) {	
+	
+		     System.out.println("Enter The Smallest Operand For the Table:");
+		     
+		  boolean validatorEscapeDivision = false;
+			do {
+		    	 
+		     
+		     boolean validatorMinima = false;
+		     
+		     do {
+					if (sc.hasNextInt()) { min = sc.nextInt(); validatorMinima = true;
+					}
+					else {
+						System.out.println("Please Enter a valid numeric value:"); sc.next();
+					}
+					
+				}
+				while(validatorMinima == false);
+			
+		     System.out.println("Enter The Largest Operand For the Table:");
+		     boolean validatorMaxima = false;
+		     
+		     do {
+					if (sc.hasNextInt()) { max = sc.nextInt(); validatorMaxima = true;
+					}
+					else {
+						System.out.println("Please Enter a valid numeric value:"); sc.next();
+					}
+					
+				}
+				while(validatorMaxima == false);
+		  
+		     if (min < max) { validatorEscapeDivision = true; }
+		     else { System.out.println("Please enter your range of values from smallest to largest."); System.out.println("Enter The Smallest Operand For the Table:"); }
+		     }
+		     while (validatorEscapeDivision == false);
+		   
+		      System.out.print("   /");
+		  for (int y = min; y <= max; y++) {
+			  System.out.printf("%10d", y);
+					  
+		  }
+		  
+		  System.out.println();
+		  System.out.println();
+		  		   
+		  for (int y = min; y <= max; y++) {
+		      
+			  
+			   System.out.printf("%4d", y);
+			  
+		         for (int x = min; x <= max; x++) {
+		        	 
+		        	if (x != 0) { System.out.printf("%10d", y/x); }
+		        	else if (x == 0) { System.out.printf("%10s", "-");}
+		     
+		         }
+		         System.out.println();
+		  
+		      }
+		  programBreak = true;
+}
+//Modulus Function
+else if (tableOperator.equalsIgnoreCase("%")) {	
+	
+		     System.out.println("Enter The Smallest Operand For the Table:");
+		     
+		  boolean validatorEscapeDivision = false;
+			do {
+		    	 
+		     
+		     boolean validatorMinima = false;
+		     
+		     do {
+					if (sc.hasNextInt()) { min = sc.nextInt(); validatorMinima = true;
+					}
+					else {
+						System.out.println("Please Enter a valid numeric value:"); sc.next();
+					}
+					
+				}
+				while(validatorMinima == false);
+			
+		     System.out.println("Enter The Largest Operand For the Table:");
+		     boolean validatorMaxima = false;
+		     
+		     do {
+					if (sc.hasNextInt()) { max = sc.nextInt(); validatorMaxima = true;
+					}
+					else {
+						System.out.println("Please Enter a valid numeric value:"); sc.next();
+					}
+					
+				}
+				while(validatorMaxima == false);
+		  
+		     if (min < max) { validatorEscapeDivision = true; }
+		     else { System.out.println("Please enter your range of values from smallest to largest."); System.out.println("Enter The Smallest Operand For the Table:"); }
+		     }
+		     while (validatorEscapeDivision == false);
+		   
+		      System.out.print("   %");
+		  for (int y = min; y <= max; y++) {
+			  System.out.printf("%10d", y);
+					  
+		  }
+		  
+		  System.out.println();
+		  System.out.println();
+		  		   
+		  for (int y = min; y <= max; y++) {
+		      
+			  
+			   System.out.printf("%4d", y);
+			  
+		         for (int x = min; x <= max; x++) {
+		       
+		  
+		        	if (x != 0) { System.out.printf("%10d", y%x); }
+		        	if (x == 0) { System.out.printf("%10s", "-");}
+		        	
+		     
+		         }
+		         System.out.println();
+		  
+		      }
+		  programBreak = true;
+}
+
+//Random Function
+else if (tableOperator.equalsIgnoreCase("r")) {		     
+		     System.out.println("Enter The Smallest Operand For the Table:");
+		     
+		  boolean validatorEscapeAddition = false;
+			do {
+		    	 
+		     
+		     boolean validatorMinima = false;
+		     
+		     do {
+					if (sc.hasNextInt()) { min = sc.nextInt(); validatorMinima = true;
+					}
+					else {
+						System.out.println("Please Enter a valid numeric value:"); sc.next();
+					}
+					
+				}
+				while(validatorMinima == false);
+			
+		     System.out.println("Enter The Largest Operand For the Table:");
+		     boolean validatorMaxima = false;
+		     
+		     do {
+					if (sc.hasNextInt()) { max = sc.nextInt(); validatorMaxima = true;
+					}
+					else {
+						System.out.println("Please Enter a valid numeric value:"); sc.next();
+					}
+					
+				}
+				while(validatorMaxima == false);
+		  
+		     if (min < max) { validatorEscapeAddition = true; }
+		     else { System.out.println("Please enter your range of values from smallest to largest."); System.out.println("Enter The Smallest Operand For the Table:"); }
+		     }
+		     while (validatorEscapeAddition == false);
+		   
+		      System.out.print("   r");
+		  for (int y = min; y <= max; y++) {
+			  System.out.printf("%10d", y);
+					  
+		  }
+		  
+		  System.out.println();
+		  System.out.println();
+		  		   
+		  for (int y = min; y <= max; y++) {
+		      
+			  
+			   System.out.printf("%4d", y);
+			  
+		         for (int x = min; x <= max; x++) {
+		        	
+		        	 int range = max - min + 1; 
+		        	 
+		        	 if (y > x) { System.out.printf("%10s", "-");}
+		        	 else { int random = (int)(Math.random() * range) + min;
+		        	 System.out.printf("%10d", random);}
+		        	 
+		         }
+		         System.out.println();
+		  }
+		  programBreak = true;
+}
+		  
+
+
+else { System.out.println("Please Enter a Valid Table Operator:"); }
+
+
+		   }
+while (programBreak == false);
+		   }
+}

@@ -1,0 +1,929 @@
+import java.util.Scanner;
+
+public class Prog05_ProgramsMenu {
+
+	public static void main(String[] args) {
+	
+		String progChoice = null; //Table Operator
+		boolean programEnd = false;
+do {	
+
+			
+		System.out.println("INTERESTING PROGRAMS MENU");
+		System.out.println("===========================================");
+		System.out.println("[A] CALCULATE EASTER DATE");
+		System.out.println("[B] CALCULATE COMMISSION PAY ");
+		System.out.println("[C] GENERATE CALCULATION TABLE");
+		System.out.println("[X] QUIT");
+		System.out.println("===========================================");
+		System.out.println("ENTER MENU OPTION:");
+		
+		progChoice = validProgOp();
+		
+		if (progChoice.equalsIgnoreCase("A")) {
+			Prog02_EasterCalc();
+		}
+		if (progChoice.equalsIgnoreCase("B")) {
+			Prog03_PayCalc();
+		}
+		if (progChoice.equalsIgnoreCase("C")) {
+			Prog04_MakeTable();
+		}
+		if (progChoice.equalsIgnoreCase("X")) {
+			System.exit(0);
+		}
+}	
+while (programEnd == false);		
+	}
+//Table Operator validation method begin	
+		public static String validProgOp () {
+				Scanner progOp = new Scanner (System.in);
+				boolean isValid = false; //Loop Breaker
+				String progChoice = null; //Operator Output
+				 do {
+					 	progChoice = progOp.nextLine();
+						if (progChoice.equalsIgnoreCase("A")) { isValid = true;
+						}
+						else if (progChoice.equalsIgnoreCase("B")) { isValid = true;
+						}
+						else if (progChoice.equalsIgnoreCase("C")) { isValid = true;
+						}
+						else if (progChoice.equalsIgnoreCase("X")) { isValid = true;
+						}
+						else {System.out.println("Please enter a valid choice:"); isValid = false;
+						}
+				 }
+				  while (isValid == false); 
+				 
+				  return progChoice;
+				}
+	//Table Operator validation method end		
+
+	//Integer validation method begin	
+	public static int validInt () {
+			Scanner intDouble = new Scanner (System.in);
+			boolean isValid = false;
+			int y = 0;
+			 do {
+					if (intDouble.hasNextInt()) { y = intDouble.nextInt(); isValid = true;
+					}
+					else {
+						System.out.println("Please Enter a valid numeric value:"); intDouble.next();
+					}
+				}
+			  while (isValid == false);
+			
+			  return y;
+			}
+//Integer validation method end	
+	
+//Double validation method begin	
+		public static int validDouble () {
+				Scanner intDouble = new Scanner (System.in);
+				boolean isValid = false;
+				int y = 0;
+				 do {
+						if (intDouble.hasNextInt()) { y = intDouble.nextInt(); isValid = true;
+						}
+						else {
+							System.out.println("Please Enter a valid numeric value:"); intDouble.next();
+						}
+					}
+				  while (isValid == false);
+
+				  return y;
+				}
+//Double validation method end		
+		
+//Day validation method begin
+	public static String validDay () {
+		Scanner dayValidator = new Scanner (System.in);
+		String dayValid = null;
+		String day = null;
+		boolean isValid = false;
+		
+		do {
+			
+		dayValid = dayValidator.nextLine();
+		
+		switch (dayValid) {
+		case "sunday": case "Sunday": day = "Sunday"; isValid = true;
+		break;
+		case "monday": case "Monday": day = "Monday"; isValid = true;
+		break;
+		case "tuesday": case "Tuesday":day = "Tuesday"; isValid = true;
+		break;
+		case "wednesday": case "Wednesday": day = "Wednesday"; isValid = true;
+		break;
+		case "thursday": case "Thursday": day = "Thursday"; isValid = true;
+		break;
+		case "friday": case "Friday": day = "Friday"; isValid = true;
+		break;
+		case "saturday": case "Saturday": day = "Saturday"; isValid = true;
+		break;
+		default: isValid = false;
+		}
+		if (isValid == false) {
+			System.out.println("Please enter a correct day:");
+			continue;
+		}
+		else {
+			break;
+		}
+	}
+		while (isValid == false);
+
+		return day;
+
+	}
+//Day validation method end
+
+//Boolean method begin
+	public static String isFinished () {
+		Scanner finish = new Scanner (System.in);
+		String done = null;
+		boolean isValid;
+		do {
+			done = finish.nextLine();
+			if 		(done.equalsIgnoreCase("y")) { isValid = true; }
+			else if (done.equalsIgnoreCase("n")) { isValid = true; }
+			else { isValid = false; System.out.println("Please enter a valid response:"); }
+		}
+			while (isValid == false);
+
+		return done;
+	}
+//Boolean method end
+	
+//Table Operator validation method begin	
+			public static String validTableOperator () {
+					Scanner validTableOperator = new Scanner (System.in);
+					boolean isValid = false;
+					String tableOperator = null;
+					 do {
+						 	tableOperator = validTableOperator.nextLine();
+							if (tableOperator.equalsIgnoreCase("+")) { isValid = true;
+							}
+							else if (tableOperator.equalsIgnoreCase("-")) { isValid = true;
+							}
+							else if (tableOperator.equalsIgnoreCase("*")) { isValid = true;
+							}
+							else if (tableOperator.equalsIgnoreCase("/")) { isValid = true;
+							}
+							else if (tableOperator.equalsIgnoreCase("%")) { isValid = true;
+							}
+							else if (tableOperator.equalsIgnoreCase("R")) { isValid = true;
+							}
+							else {System.out.println("Please enter a valid operator:"); isValid = false;
+							}
+					 }
+					  while (isValid == false); 
+
+					  return tableOperator;
+					  
+					}
+public static boolean ProgEnd () {
+	return false;	
+}
+//Table Operator validation method end	
+
+//------------------------------------------------------------------------------------------------------------------------------------------			
+			
+//Easter calculator begin
+	public static void Prog02_EasterCalc () {
+		
+				int y;
+				int a;
+				int b;
+				int c;
+				int d;
+				int e;
+				int g;
+				int h;
+				int j;
+				int k;
+				int m;
+				int r;
+				int n;
+				int p;
+			
+				
+				System.out.println("When is Easter, you ask?");
+				System.out.println("Enter the year of your choosing:");
+				y = validInt();
+				System.out.println();
+				
+				a = y % 19;
+				b = y / 100;
+				c = y % 100;
+				d = b / 4;
+				e = b % 4;
+				g = (8 * b + 13)/25; 
+				h = (19 * a + b - d - g + 15)%30;
+				j = c / 4;
+				k = c % 4; 
+				m = (a + 11 * h)/319;
+				r = (2 * e + 2 * j - k - h + m + 32)%7;
+				n = (h - m + r + 90)/25;
+				p = (h - m + r + n + 19)%32;
+				
+				
+				System.out.println("In " + y + ", Easter falls on " + n + "/" + p + ".");
+				
+				String progEnd = null;
+				System.out.println();
+				System.out.println("Are you finished using this program? [Y/N]");
+				progEnd = isFinished();
+				
+				if (progEnd.equalsIgnoreCase("y")) {
+					System.exit(0);
+				}
+			}
+		
+//Easter calculator end
+
+//------------------------------------------------------------------------------------------------------------------------------------------------
+	
+//Pay calculator begin
+	public static void Prog03_PayCalc () {
+		
+		String Input1 = null; //Day declarers
+		String Input2 = null; //Day declarers
+		String Input3 = null; //Day declarers
+		String Input4 = null; //Day declarers
+		String Input5 = null; //Day declarers
+		String Input6 = null; //Day declarers
+		String Input7 = null; //Day declarers
+		
+		String Input1Final = null; //Used for sorting days for table display
+		String Input2Final = null; //Used for sorting days for table display
+		String Input3Final = null; //Used for sorting days for table display
+		String Input4Final = null; //Used for sorting days for table display
+		String Input5Final = null; //Used for sorting days for table display
+		String Input6Final = null; //Used for sorting days for table display
+		String Input7Final = null; //Used for sorting days for table display
+		
+		double Input1Value = 0; //Sale temp value storage
+		double Input2Value = 0; //Sale temp value storage
+		double Input3Value = 0; //Sale temp value storage
+		double Input4Value = 0; //Sale temp value storage
+		double Input5Value = 0; //Sale temp value storage
+		double Input6Value = 0; //Sale temp value storage
+		double Input7Value = 0; //Sale temp value storage
+		 
+		double val1Final = 0; //Sale final value storage
+		double val2Final = 0; //Sale final value storage
+		double val3Final = 0; //Sale final value storage
+		double val4Final = 0; //Sale final value storage
+		double val5Final = 0; //Sale final value storage
+		double val6Final = 0; //Sale final value storage
+		double val7Final = 0; //Sale final value storage
+		 
+		double InputSaleTotal; //Total sale value
+		double InputSaleAverage; //Average sale value
+		double CommissionValue; //Commission earned
+		
+		int SaleAmountTotal = 0; //Incremental sale tracker
+		
+		String done1 = "n"; //Used to exit input loops for each day
+		String done2 = "n"; //Used to exit input loops for each day
+		String done3 = "n"; //Used to exit input loops for each day
+		String done4 = "n"; //Used to exit input loops for each day
+		String done5 = "n"; //Used to exit input loops for each day
+		String done6 = "n"; //Used to exit input loops for each day
+		String done7 = "n"; //Used to exit input loops for each day
+		
+	
+		System.out.println("Enter Day of Sale (Sunday, Monday, Tuesday, etc.:");  
+			
+		Input1 = validDay();
+		
+		while (done1.equals("n"))
+		{
+		System.out.println("Enter Sale Amount for " + Input1+ ":");
+		
+		Input1Value = validDouble();
+		
+		val1Final = Input1Value + val1Final;
+			
+			SaleAmountTotal++;
+			
+			System.out.println("Are you finished entering sales for " + Input1 + "?" + "(Y/N)");
+			done1 = isFinished();
+			
+			if (done1.equalsIgnoreCase("n"))
+				continue;
+			if (done1.equalsIgnoreCase("y"))
+				break;
+	}
+		System.out.println("Enter Day of Sale (Sunday, Monday, Tuesday, etc.:");  
+		
+		Input2 = validDay();
+		
+		while (done2.equals("n"))
+		{
+		System.out.println("Enter Sale Amount for " + Input2+ ":");
+		
+		Input2Value = validDouble();
+		
+		val2Final = Input2Value + val2Final;
+			
+			SaleAmountTotal++;
+			
+			System.out.println("Are you finished entering sales for " + Input2 + "?" + "(Y/N)");
+			done2 = isFinished();
+			
+			if (done2.equalsIgnoreCase("n"))
+				continue;
+			if (done2.equalsIgnoreCase("y"))
+				break;
+	}
+		System.out.println("Enter Day of Sale (Sunday, Monday, Tuesday, etc.:");  
+		
+		Input3 = validDay();
+		
+		while (done3.equals("n"))
+		{
+		System.out.println("Enter Sale Amount for " + Input3+ ":");
+		
+		Input3Value = validDouble();
+		
+		val3Final = Input3Value + val3Final;
+			
+			SaleAmountTotal++;
+			
+			System.out.println("Are you finished entering sales for " + Input3 + "?" + "(Y/N)");
+			done3 = isFinished();
+			
+			if (done3.equalsIgnoreCase("n"))
+				continue;
+			if (done3.equalsIgnoreCase("y"))
+				break;
+	}
+		System.out.println("Enter Day of Sale (Sunday, Monday, Tuesday, etc.:");  
+		
+		Input4 = validDay();
+		
+		while (done4.equals("n"))
+		{
+		System.out.println("Enter Sale Amount for " + Input4+ ":");
+		
+		Input4Value = validDouble();
+		
+		val4Final = Input4Value + val4Final;
+			
+			SaleAmountTotal++;
+			
+			System.out.println("Are you finished entering sales for " + Input4 + "?" + "(Y/N)");
+			done4 = isFinished();
+			
+			if (done4.equalsIgnoreCase("n"))
+				continue;
+			if (done4.equalsIgnoreCase("y"))
+				break;
+	}
+		System.out.println("Enter Day of Sale (Sunday, Monday, Tuesday, etc.:");  
+		
+		Input5 = validDay();
+		
+		while (done5.equals("n"))
+		{
+		System.out.println("Enter Sale Amount for " + Input5+ ":");
+		
+		Input5Value = validDouble();
+		
+		val5Final = Input5Value + val5Final;
+			
+			SaleAmountTotal++;
+			
+			System.out.println("Are you finished entering sales for " + Input5 + "?" + "(Y/N)");
+			done5 = isFinished();
+			
+			if (done5.equalsIgnoreCase("n"))
+				continue;
+			if (done5.equalsIgnoreCase("y"))
+				break;
+	}
+		System.out.println("Enter Day of Sale (Sunday, Monday, Tuesday, etc.:");  
+		
+		Input6 = validDay();
+		
+		while (done6.equals("n"))
+		{
+		System.out.println("Enter Sale Amount for " + Input6+ ":");
+		
+		Input6Value = validDouble();
+		
+		val6Final = Input6Value + val6Final;
+			
+			SaleAmountTotal++;
+			
+			System.out.println("Are you finished entering sales for " + Input6 + "?" + "(Y/N)");
+			done6 = isFinished();
+			
+			if (done6.equalsIgnoreCase("n"))
+				continue;
+			if (done6.equalsIgnoreCase("y"))
+				break;
+	}
+		System.out.println("Enter Day of Sale (Sunday, Monday, Tuesday, etc.:");  
+		
+		Input7 = validDay();
+		
+		while (done7.equals("n"))
+		{
+		System.out.println("Enter Sale Amount for " + Input7+ ":");
+		
+		Input7Value = validDouble();
+		
+		val7Final = Input7Value + val7Final;
+			
+			SaleAmountTotal++;
+			
+			System.out.println("Are you finished entering sales for " + Input7 + "?" + "(Y/N)");
+			done7 = isFinished();
+			
+			if (done7.equalsIgnoreCase("n"))
+				continue;
+			if (done7.equalsIgnoreCase("y"))
+				break;
+	}	
+		switch (Input1) {
+		case "Sunday": Input1Final = "Sunday"; break;
+		case "Monday": Input2Final = "Monday"; break;
+		case "Tuesday": Input3Final = "Tuesday"; break;
+		case "Wednesday": Input4Final = "Wednesday"; break;
+		case "Thursday": Input5Final = "Thursday"; break;
+		case "Friday": Input6Final = "Friday"; break;
+		case "Saturday": Input7Final = "Saturday"; break;
+		}
+		switch (Input2) {
+		case "Sunday": Input1Final = "Sunday"; break;
+		case "Monday": Input2Final = "Monday"; break;
+		case "Tuesday": Input3Final = "Tuesday"; break;
+		case "Wednesday": Input4Final = "Wednesday"; break;
+		case "Thursday": Input5Final = "Thursday"; break;
+		case "Friday": Input6Final = "Friday"; break;
+		case "Saturday": Input7Final = "Saturday"; break;
+		}
+		switch (Input3) {
+		case "Sunday": Input1Final = "Sunday"; break;
+		case "Monday": Input2Final = "Monday"; break;
+		case "Tuesday": Input3Final = "Tuesday"; break;
+		case "Wednesday": Input4Final = "Wednesday"; break;
+		case "Thursday": Input5Final = "Thursday"; break;
+		case "Friday": Input6Final = "Friday"; break;
+		case "Saturday": Input7Final = "Saturday"; break;
+		}
+		switch (Input4) {
+		case "Sunday": Input1Final = "Sunday"; break;
+		case "Monday": Input2Final = "Monday"; break;
+		case "Tuesday": Input3Final = "Tuesday"; break;
+		case "Wednesday": Input4Final = "Wednesday"; break;
+		case "Thursday": Input5Final = "Thursday"; break;
+		case "Friday": Input6Final = "Friday"; break;
+		case "Saturday": Input7Final = "Saturday"; break;
+		}
+		switch (Input5) {
+		case "Sunday": Input1Final = "Sunday"; break;
+		case "Monday": Input2Final = "Monday"; break;
+		case "Tuesday": Input3Final = "Tuesday"; break;
+		case "Wednesday": Input4Final = "Wednesday"; break;
+		case "Thursday": Input5Final = "Thursday"; break;
+		case "Friday": Input6Final = "Friday"; break;
+		case "Saturday": Input7Final = "Saturday"; break;
+		}
+		switch (Input6) {
+		case "Sunday": Input1Final = "Sunday"; break;
+		case "Monday": Input2Final = "Monday"; break;
+		case "Tuesday": Input3Final = "Tuesday"; break;
+		case "Wednesday": Input4Final = "Wednesday"; break;
+		case "Thursday": Input5Final = "Thursday"; break;
+		case "Friday": Input6Final = "Friday"; break;
+		case "Saturday": Input7Final = "Saturday"; break;
+		}
+		switch (Input7) {
+		case "Sunday": Input1Final = "Sunday"; break;
+		case "Monday": Input2Final = "Monday"; break;
+		case "Tuesday": Input3Final = "Tuesday"; break;
+		case "Wednesday": Input4Final = "Wednesday"; break;
+		case "Thursday": Input5Final = "Thursday"; break;
+		case "Friday": Input6Final = "Friday"; break;
+		case "Saturday": Input7Final = "Saturday"; break;
+		}
+		
+
+		InputSaleTotal = (val1Final + val2Final + val3Final + val4Final 
+				 + val5Final + val6Final + val7Final);
+
+InputSaleAverage = (val1Final + val2Final + val3Final + val4Final 
+		           + val5Final + val6Final + val7Final) / SaleAmountTotal;
+
+CommissionValue =  (200 + (InputSaleTotal / 100) * 9);
+
+if (InputSaleTotal > 15000) {
+	CommissionValue = (CommissionValue + 1000);
+}
+
+System.out.println();
+System.out.println();
+System.out.println();
+System.out.println();
+
+System.out.println("  Day             Sales");
+
+System.out.print(Input1Final + "       $ ");
+System.out.printf("%,10.2f\n", val1Final);
+System.out.print(Input2Final + "       $ ");
+System.out.printf("%,10.2f\n", val2Final);
+System.out.print(Input3Final + "      $ ");
+System.out.printf("%,10.2f\n", val3Final);
+System.out.print(Input4Final + "    $ ");
+System.out.printf("%,10.2f\n", val4Final);
+System.out.print(Input5Final + "     $ ");
+System.out.printf("%,10.2f\n", val5Final);
+System.out.print(Input6Final + "       $ ");
+System.out.printf("%,10.2f\n", val6Final);
+System.out.print(Input7Final + "     $ ");
+System.out.printf("%,10.2f\n", val7Final);
+System.out.println("             ____________");
+System.out.print("Total Sales: $");
+System.out.printf("%,11.2f", InputSaleTotal);
+
+System.out.println();
+System.out.println();;
+
+System.out.print("Average sale value: $");
+System.out.printf("%,11.2f", InputSaleAverage);
+
+System.out.println();
+System.out.println();;
+
+System.out.print("Commission on Sales: $");
+System.out.printf("%,11.2f", CommissionValue);
+
+if (InputSaleTotal > 60000) {
+	System.out.print(" ***");
+	
+	System.out.println();
+
+	String progEnd = null;
+	System.out.println();
+	System.out.println("Are you finished using this program? [Y/N]");
+	progEnd = isFinished();
+	
+	if (progEnd.equalsIgnoreCase("y")) {
+		System.exit(0);
+	}
+
+	
+		}
+	}
+	
+//------------------------------------------------------------------------------------------------------------------------------------------------	
+	
+	public static void Prog04_MakeTable () {
+	
+	     
+	     String tableOperator; //Table operator storage
+	     
+		 System.out.println("Enter The Table Operator (+, -, *, /, %, or R):");
+	     
+
+	     int min = 0; //Min input
+	     int max = 0; //Max input
+	     boolean programBreak = false; //Used to exit loop
+	     
+ tableOperator = validTableOperator();
+
+//Addition Function
+if (tableOperator.equalsIgnoreCase("+")) {		     
+	     System.out.println("Enter The Smallest Operand For the Table:");
+	     
+	  boolean validatorEscapeAddition = false;
+		do {
+	    	 
+	     
+	    min = validInt();
+		
+	     System.out.println("Enter The Largest Operand For the Table:");
+	    
+	    max = validInt();
+	  
+	     if (min < max) { validatorEscapeAddition = true; }
+	     else { System.out.println("Please enter your range of values from smallest to largest."); 
+	     System.out.println("Enter The Smallest Operand For the Table:"); }
+	     }
+	     while (validatorEscapeAddition == false);
+	   
+	      System.out.print("   +");
+	  for (int y = min; y <= max; y++) {
+		  System.out.printf("%10d", y);
+				  
+	  }
+	  
+	  System.out.println();
+	  System.out.println();
+	  		   
+	  for (int y = min; y <= max; y++) {
+	      
+		  
+		   System.out.printf("%4d", y);
+		  
+	         for (int x = min; x <= max; x++) {
+	        	 System.out.printf("%10d", y+x);
+	     
+	         }
+	         System.out.println();
+	  
+	      }
+	  programBreak = true;
+	  
+	    String progEnd = null;
+		System.out.println();
+		System.out.println("Are you finished using this program? [Y/N]");
+		progEnd = isFinished();
+		
+		if (progEnd.equalsIgnoreCase("y")) {
+			System.exit(0);
+		}
+}
+
+//Subtraction Function
+else if (tableOperator.equalsIgnoreCase("-")) {		     
+	     System.out.println("Enter The Smallest Operand For the Table:");
+	     
+	  boolean validatorEscapeSubtraction = false;
+		do {
+	   
+		 min = validInt();
+		
+	     System.out.println("Enter The Largest Operand For the Table:");
+	    
+	     max = validInt();
+	  
+	     if (min < max) { validatorEscapeSubtraction = true; }
+	     else { System.out.println("Please enter your range of values from smallest to largest.");
+	     System.out.println("Enter The Smallest Operand For the Table:"); }
+	     }
+	     while (validatorEscapeSubtraction == false);
+	   
+	      System.out.print("   -");
+	  for (int y = min; y <= max; y++) {
+		  System.out.printf("%10d", y);
+				  
+	  }
+	  
+	  System.out.println();
+	  System.out.println();
+	  		   
+	  for (int y = min; y <= max; y++) {
+	      
+		  
+		   System.out.printf("%4d", y);
+		  
+	         for (int x = min; x <= max; x++) {
+	        	 System.out.printf("%10d", y-x);
+	     
+	         }
+	         System.out.println();
+	  
+	      }
+	  programBreak = true;
+	  
+	    String progEnd = null;
+		System.out.println();
+		System.out.println("Are you finished using this program? [Y/N]");
+		progEnd = isFinished();
+		
+		if (progEnd.equalsIgnoreCase("y")) {
+			System.exit(0);
+		}
+}
+	     
+//Multiplication Function
+else if (tableOperator.equalsIgnoreCase("*")) {   
+	    System.out.println("Enter The Smallest Operand For the Table:");
+	     
+	  boolean validatorEscapeMultiply = false;
+		do {
+	    	 
+	     min = validInt();
+	     
+	     System.out.println("Enter The Largest Operand For the Table:");
+	     	
+	     max = validInt();
+	  
+	     if (min < max) { validatorEscapeMultiply = true; }
+	     else { System.out.println("Please enter your range of values from smallest to largest."); 
+	     System.out.println("Enter The Smallest Operand For the Table:"); }
+	     }
+	     while (validatorEscapeMultiply == false);
+	   
+	      System.out.print("   *");
+	  for (int y = min; y <= max; y++) {
+		  System.out.printf("%10d", y);
+				  
+	  }
+	  
+	  System.out.println();
+	  System.out.println();
+	  		   
+	  for (int y = min; y <= max; y++) {
+	      
+		  
+		   System.out.printf("%4d", y);
+		  
+	         for (int x = min; x <= max; x++) {
+	        	 System.out.printf("%10d", y*x);
+	        	 
+	         }
+	         System.out.println();
+	  
+	      }
+	  programBreak = true;
+	  
+	    String progEnd = null;
+		System.out.println();
+		System.out.println("Are you finished using this program? [Y/N]");
+		progEnd = isFinished();
+		
+		if (progEnd.equalsIgnoreCase("y")) {
+			System.exit(0);
+		}
+	
+	}
+
+//Division Function
+else if (tableOperator.equalsIgnoreCase("/")) {	
+
+	     System.out.println("Enter The Smallest Operand For the Table:");
+	     
+	  boolean validatorEscapeDivision = false;
+		do {
+	    	  min = validInt();
+		
+	     System.out.println("Enter The Largest Operand For the Table:");
+	     
+	     max = validInt();
+	  
+	     if (min < max) { validatorEscapeDivision = true; }
+	     else { System.out.println("Please enter your range of values from smallest to largest."); 
+	     System.out.println("Enter The Smallest Operand For the Table:"); }
+	     }
+	     while (validatorEscapeDivision == false);
+	   
+	      System.out.print("   /");
+	  for (int y = min; y <= max; y++) {
+		  System.out.printf("%10d", y);
+				  
+	  }
+	  
+	  System.out.println();
+	  System.out.println();
+	  		   
+	  for (int y = min; y <= max; y++) {
+	      
+		  
+		   System.out.printf("%4d", y);
+		  
+	         for (int x = min; x <= max; x++) {
+	        	 
+	        	if (x != 0) { System.out.printf("%10d", y/x); }
+	        	else if (x == 0) { System.out.printf("%10s", "-");}
+	     
+	         }
+	         System.out.println();
+	  
+	      }
+	  programBreak = true;
+	  
+	    String progEnd = null;
+		System.out.println();
+		System.out.println("Are you finished using this program? [Y/N]");
+		progEnd = isFinished();
+		
+		if (progEnd.equalsIgnoreCase("y")) {
+			System.exit(0);
+		}
+}
+//Modulus Function
+else if (tableOperator.equalsIgnoreCase("%")) {	
+
+	     System.out.println("Enter The Smallest Operand For the Table:");
+	     
+	  boolean validatorEscapeDivision = false;
+		do {
+	    	 
+	    min = validInt();
+		
+	     System.out.println("Enter The Largest Operand For the Table:");
+	     
+	    max = validInt();
+	  
+	     if (min < max) { validatorEscapeDivision = true; }
+	     else { System.out.println("Please enter your range of values from smallest to largest."); 
+	     System.out.println("Enter The Smallest Operand For the Table:"); }
+	     }
+	     while (validatorEscapeDivision == false);
+	   
+	      System.out.print("   %");
+	  for (int y = min; y <= max; y++) {
+		  System.out.printf("%10d", y);
+				  
+	  }
+	  
+	  System.out.println();
+	  System.out.println();
+	  		   
+	  for (int y = min; y <= max; y++) {
+	      
+		  
+		   System.out.printf("%4d", y);
+		  
+	         for (int x = min; x <= max; x++) {
+	       
+	  
+	        	if (x != 0) { System.out.printf("%10d", y%x); }
+	        	if (x == 0) { System.out.printf("%10s", "-");}
+	        	
+	     
+	         }
+	         System.out.println();
+	  
+	      }
+	  programBreak = true;
+	  
+	    String progEnd = null;
+		System.out.println();
+		System.out.println("Are you finished using this program? [Y/N]");
+		progEnd = isFinished();
+		
+		if (progEnd.equalsIgnoreCase("y")) {
+			System.exit(0);
+		}
+}
+
+//Random Function
+else if (tableOperator.equalsIgnoreCase("r")) {		     
+	     System.out.println("Enter The Smallest Operand For the Table:");
+	     
+	  boolean validatorEscapeRandom = false;
+		do {
+	    	 
+	     
+			 min = validInt();
+		
+	     System.out.println("Enter The Largest Operand For the Table:");
+
+	     max = validInt();
+	  
+	     if (min < max) { validatorEscapeRandom = true; }
+	     else { System.out.println("Please enter your range of values from smallest to largest."); 
+	     System.out.println("Enter The Smallest Operand For the Table:"); }
+	     }
+	     while (validatorEscapeRandom == false);
+	   
+	      System.out.print("   r");
+	  for (int y = min; y <= max; y++) {
+		  System.out.printf("%10d", y);
+				  
+	  }
+	  
+	  System.out.println();
+	  System.out.println();
+	  		   
+	  for (int y = min; y <= max; y++) {
+	      
+		  
+		   System.out.printf("%4d", y);
+		  
+	         for (int x = min; x <= max; x++) {
+	        	
+	        	 int range = max - min + 1; 
+	        	 
+	        	 if (y > x) { System.out.printf("%10s", "-");}
+	        	 else { int random = (int)(Math.random() * range) + min;
+	        	 System.out.printf("%10d", random);}
+	        	 
+	         }
+	         System.out.println();
+	  }
+	  programBreak = true; 
+	  
+	    String progEnd = null;
+		System.out.println();
+		System.out.println("Are you finished using this program? [Y/N]");
+		progEnd = isFinished();
+		
+		if (progEnd.equalsIgnoreCase("y")) {
+			System.exit(0);
+		}
+}
+while (programBreak == false);
+
+//------------------------------------------------------------------------------------------------------------------------------------------
+	
+	}
+}
+	
